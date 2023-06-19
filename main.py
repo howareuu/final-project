@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 
+from predict.mlib import predict
 app = Flask(__name__)
 
 
@@ -7,6 +8,16 @@ app = Flask(__name__)
 def fruit():
     """Return Hello messgae"""
     return {"messgae": "Hello CD project-new deploy"}
+
+
+@app.route("/predict", methods=["POST"])
+def predict_height():
+    """Predicts the Height of MLB Players"""
+
+    json_payload = request.json
+    print(f"JSON payload: {json_payload}")
+    prediction = predict(json_payload["Weight"])
+    return jsonify({"prediction": prediction})
 
 
 if __name__ == "__main__":
