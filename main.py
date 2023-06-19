@@ -1,13 +1,14 @@
 from flask import Flask, request, jsonify
 
 from predict.mlib import predict
+
 app = Flask(__name__)
 
 
 @app.route("/")
 def fruit():
-    """Return Hello messgae"""
-    return {"messgae": "Hello CD project-new deploy"}
+    """Return Hello message"""
+    return {"message": "Welcome to ML project of Continuous Delivery!"}
 
 
 @app.route("/predict", methods=["POST"])
