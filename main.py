@@ -8,11 +8,11 @@ app = Flask(__name__)
 @app.route("/")
 def fruit():
     """Return Hello message"""
-    return {"message": "Welcome to ML project of Continuous Delivery!"}
+    return {"message": "Welcome to ML project of Continuous Delivery, this is a test for production deployment!"}
 
 
 @app.route("/predict", methods=["POST"])
-def predict_height():
+def predict_height():a
     """Predicts the Height of MLB Players"""
 
     json_payload = request.json
