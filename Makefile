@@ -11,4 +11,10 @@ format:
 lint:
 	pylint --disable=R,C main.py
 
-all: install lint test
+deploy:
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 787163628025.dkr.ecr.us-east-1.amazonaws.com
+	docker build -t mlops-final-project .
+	docker tag mlops-final-project:latest 787163628025.dkr.ecr.us-east-1.amazonaws.com/mlops-final-project:latest
+	docker push 787163628025.dkr.ecr.us-east-1.amazonaws.com/mlops-final-project:latest
+
+all: install format lint test deploy
