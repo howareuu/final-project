@@ -1,4 +1,4 @@
-FROM public.ecr.aws/docker/library/python:3.10.12-slim-bullseye
+FROM public.ecr.aws/docker/library/python:3.9.17-slim-bullseye
 
 RUN mkdir -p /app
 COPY . main.py /app/
