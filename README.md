@@ -20,7 +20,7 @@ Open `Baseball_Predictions_Export_Model.ipynb` in Jupyter Notebook and modify th
 Every `git push` will trigger a CodeBuild job to build a new docker image and push to ECR. Then, AppRunner will subscribe the latest version of that docker image and deploy to production. You just need to wait the deployment to finish.
 
 ### Test service
-- Test homepage: `curl http://https://j4fmgsh4pz.us-east-1.awsapprunner.com`
+- Test homepage: `curl https://j4fmgsh4pz.us-east-1.awsapprunner.com`
 - Test prediction: `curl -X POST -H "Content-Type: application/json" -d '{"Weight": 200}' https://j4fmgsh4pz.us-east-1.awsapprunner.com/predict`
 
 Remember to modify the URL to your own AppRunner URL.
