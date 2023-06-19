@@ -14,7 +14,7 @@ def random_fruit():
 def fruit():
     """Return random fruit"""
     my_fruit = random_fruit()
-    return {"messgae": "Hello CD project"}
+    return {"messgae": "Hello CD project-new deploy"}
 
 
 if __name__ == "__main__":
